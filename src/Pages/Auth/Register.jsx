@@ -96,10 +96,10 @@ createUser(email,password)
 
         Swal.fire({
     title: "Success!",
-    text: "Registration completed.Log in Now!!",
+    text: "Registration completed.!!",
     icon: "success",
   });
-  navigate("/auth/login");
+  navigate("/");
   } )
 
       })
