@@ -9,6 +9,7 @@ import Auth from '../Auth/Auth';
 import Register from '../Auth/Register';
 import Profile from '../Profile/Profile';
 import ResetPass from '../ResetPass/ResetPass';
+import PrivateRoute from '../../AuthProvider/PrivateRoute';
 
 export const router = createBrowserRouter([
   {
@@ -23,13 +24,17 @@ export const router = createBrowserRouter([
       },
       {
         path:'/details/:id',
-        Component: CardDetails,
+        element: <PrivateRoute>
+               <CardDetails></CardDetails>
+        </PrivateRoute> ,
         loader:()=>fetch('/data.json')
         
       },
       {
         path : '/profile',
-        Component: Profile,
+        element: <PrivateRoute>
+               <Profile></Profile>
+        </PrivateRoute> ,
       }
     ]
 },
