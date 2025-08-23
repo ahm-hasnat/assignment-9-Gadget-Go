@@ -1,15 +1,17 @@
 import React, { use, useState } from 'react';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../../AuthProvider/Provider';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { Navigate } from 'react-router';
 
 
 const ResetPass = () => {
-
+  const navigate = useNavigate();
      const location = useLocation();
   const passedEmail = location?.state?.email || '';
   const [email, setEmail] = useState(passedEmail);
+  const [newPassError, setNewPassError] = useState('');
 const [passError, setPassError] = useState('');
     const [showPass, setShowPass] = useState(false);
     const {resetPassword} = use(AuthContext);
@@ -25,32 +27,32 @@ const [passError, setPassError] = useState('');
       setPassError("Passwords do not match.");
       return;
     }
-        const hasUpper = /[A-Z]/.test(password);
-    const hasLower = /[a-z]/.test(password);
-     const hasLength = password.length >= 6;
+        const hasUpper = /[A-Z]/.test(newPassword);
+    const hasLower = /[a-z]/.test(newPassword);
+     const hasLength = newPassword.length >= 6;
 
       if (!hasLength && !hasUpper && !hasLower) {
-        setPassError("Password must be at least 6 characters, include at least one uppercase and one lowercase letter.");
+        setNewPassError("Password must be at least 6 characters, include at least one uppercase and one lowercase letter.");
       return;
    }
     else if (hasLength && !hasUpper && !hasLower) {
-     setPassError("Include at least one uppercase and one lowercase letter.");
+    setNewPassError("Include at least one uppercase and one lowercase letter.");
       return;
   }
    else if (!hasLength) {
-     setPassError("Password must be at least 6 characters.");
+    setNewPassError("Password must be at least 6 characters.");
     return;
       }
        else if (!hasUpper) {
-    setPassError("Include at least one uppercase letter.");
+   setNewPassError("Include at least one uppercase letter.");
       return;
     } 
     else if (!hasLower) {
-       setPassError("Include at least one lowercase letter.");
+      setNewPassError("Include at least one lowercase letter.");
       return;
     } 
     else {
-       setPassError(""); 
+      setNewPassError(""); 
   } 
 
         resetPassword(email)
@@ -58,6 +60,9 @@ const [passError, setPassError] = useState('');
           Swal.fire("Check Your Email", "A reset link has been sent to your email.", "success");
              window.open('https://mail.google.com', '_blank');
 
+        }).then(()=>{
+
+            navigate('/auth/login');
         })
 
     }
@@ -93,6 +98,7 @@ const [passError, setPassError] = useState('');
                              }
                              </button>
                            </div>
+                           {newPassError && <p className="text-red-500 text-sm">{newPassError}</p>}
                 <label className="label">Confirm New Password</label>
                   <div className='relative'>
                            <input type={showPass ? 'text':'password'} name='ConfirmPassword' className="input bg-[#F3F3F3] w-full" 
