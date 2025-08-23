@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 const Navbar = () => {
        const navigate = useNavigate();
  const {user,logOut} = use(AuthContext);
-     console.log(user);
+    //  console.log(user);
    const   handleLogOut = ()=>{
       
         logOut()
@@ -66,7 +66,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-4">
-    <div className='text-2xl font-bold'><TfiShoppingCart /></div>
+   <NavLink to='/errorpage' ><div className='text-2xl font-bold'><TfiShoppingCart /></div></NavLink> 
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
 
         <div className="w-10 rounded-full">

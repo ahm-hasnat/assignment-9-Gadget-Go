@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { useNavigate } from 'react-router';
+import {  useNavigate } from 'react-router';
 import { AuthContext } from '../../AuthProvider/Provider';
 import Swal from 'sweetalert2'
 import { FaEye,FaEyeSlash } from "react-icons/fa";
@@ -8,10 +8,12 @@ import { FaEye,FaEyeSlash } from "react-icons/fa";
 const Login = () => {
     const [error, setError] = useState("");
     const [showPass, setShowPass] = useState(false);
+    const [controlledEmail,setEmail] = useState('');
    
   const {LogIn,signInWithGoogle,user} = use(AuthContext);
     const navigate = useNavigate();
 
+   
   const handleGooglelogIn = ()=>{
    
      signInWithGoogle()
@@ -85,8 +87,19 @@ const Login = () => {
         setError(errorCode);
         }
     })
-  
+   
+
   }
+  const getEmail=(e)=>{
+      const email = e.target.value;
+     console.log(email);
+     setEmail(email);
+     
+    }
+const handleResetPass=e=>{
+  const email = controlledEmail;
+ navigate('/auth/reset', { state: { email } });
+}
     return (
         <div className="hero bg-base-200 ">
   <div className="hero-content flex-col lg:flex">
@@ -99,7 +112,8 @@ const Login = () => {
       <div className="card-body">
         <form onSubmit={handleLogin} className="form ">
           <label className="label">Email</label>
-          <input type="email" name='email' className="input mb-1 mt-1" placeholder="Email" />
+          <input type="email" name='email' className="input mb-1 mt-1"
+           placeholder="Email" onChange={getEmail} />
           <label className="label">Password</label>
           <div className='relative'>
                    <input type={showPass ? 'text':'password'} name='password' className="input bg-[#F3F3F3] w-full" 
@@ -111,7 +125,7 @@ const Login = () => {
                      }
                      </button>
                    </div>
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <div><a onClick={handleResetPass} className="link link-hover">Forgot password?</a></div>
           <button type='submit' className="btn btn-neutral w-full mt-4 mb-2 ">Login</button>
           <p>Don't have an account? <span onClick={()=>navigate('/auth/register')} className='text-blue-700 
           font-bold hover:underline cursor-pointer'>Register</span></p>

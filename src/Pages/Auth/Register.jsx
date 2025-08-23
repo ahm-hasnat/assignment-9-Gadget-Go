@@ -46,7 +46,7 @@ const Register = () => {
 
 
     if (name.length < 5) {
-        setNameError("Name should be more than 5 characters.");
+        setNameError("Name should be at least 5 characters.");
     return;
     } else {
     setNameError("");

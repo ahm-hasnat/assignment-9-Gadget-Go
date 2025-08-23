@@ -8,6 +8,7 @@ import Login from '../Auth/Login';
 import Auth from '../Auth/Auth';
 import Register from '../Auth/Register';
 import Profile from '../Profile/Profile';
+import ResetPass from '../ResetPass/ResetPass';
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,9 @@ export const router = createBrowserRouter([
 {
     path:'/auth/register',
    Component : Register,
+},{
+  path:'/auth/reset',
+  Component: ResetPass,
 }
     ]
 }
