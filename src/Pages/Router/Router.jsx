@@ -7,6 +7,7 @@ import CardDetails from '../Details/CardDetails';
 import Login from '../Auth/Login';
 import Auth from '../Auth/Auth';
 import Register from '../Auth/Register';
+import Profile from '../Profile/Profile';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
         loader:()=>fetch('/data.json')
         
       },
+      {
+        path : '/profile',
+        Component: Profile,
+      }
     ]
 },
 {

@@ -9,7 +9,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const [showPass, setShowPass] = useState(false);
    
-  const {LogIn,signInWithGoogle} = use(AuthContext);
+  const {LogIn,signInWithGoogle,user} = use(AuthContext);
     const navigate = useNavigate();
 
   const handleGooglelogIn = ()=>{
@@ -36,6 +36,17 @@ const Login = () => {
    const form = e.target;
    const email = form.email.value;
    const password = form.password.value;
+
+   if(!user){
+     Swal.fire({
+      title: "Oops!",
+      text: "No user found! please register!.",
+      icon: "warning",
+       
+    });
+   navigate('/auth/register');
+   return;
+   }
     
    LogIn(email,password)
   .then((result) =>{

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 const Navbar = () => {
        const navigate = useNavigate();
  const {user,logOut} = use(AuthContext);
-
+     console.log(user);
    const   handleLogOut = ()=>{
       
         logOut()
@@ -70,9 +70,15 @@ const Navbar = () => {
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
 
         <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://randomuser.me/api/portraits/men/1.jpg" />
+         <NavLink to='/profile'><img title={user?.displayName || "Guest"}
+          className="w-12 rounded-full  cursor-pointer"
+          src={`${ user?.photoURL ||
+
+            "https://randomuser.me/api/portraits/men/1.jpg" 
+
+          }`}
+          alt=""
+        /></NavLink>
         </div>
       </div>
       { user ? 
@@ -88,4 +94,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-// https://randomuser.me/api/portraits/men/1.jpg
+// https://randomuser.me/api/portraits/men/2.jpg
+//  <img
+//             alt="Tailwind CSS Navbar component"
+//             src="https://randomuser.me/api/portraits/men/1.jpg" />

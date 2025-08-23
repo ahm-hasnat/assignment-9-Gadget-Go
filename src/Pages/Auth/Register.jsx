@@ -6,7 +6,7 @@ import { FaEye,FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   
-      const { createUser,LogIn,signInWithGoogle } = use(AuthContext);
+      const { createUser,signInWithGoogle,updateUser,setUser } = use(AuthContext);
   const [nameError, setNameError] = useState("");
   const [passError,setPassError] = useState([]);
   const [showPass, setShowPass] = useState(false);
@@ -86,15 +86,24 @@ createUser(email,password)
     .then((result) =>{
       const user = result.user;
       console.log(user);
-       Swal.fire({
+      updateUser({
+     
+       displayName : name,
+       photoURL: photo
+      })
+
+      .then(()=>{
+
+        Swal.fire({
     title: "Success!",
-    text: "Registration completed.",
+    text: "Registration completed.Log in Now!!",
     icon: "success",
   });
   navigate("/auth/login");
-    }
-   
-  )
+  } )
+
+      })
+      
    .catch((error) => {
     if (error.code === 'auth/email-already-in-use') {
       Swal.fire({

@@ -30,6 +30,10 @@ const Provider = ({children}) => {
   const LogIn = (email,password)=>{
     return signInWithEmailAndPassword(auth,email,password);
   };
+
+  const updateUser = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
+  };
    const logOut = () => {
     return signOut(auth);
   };
@@ -50,7 +54,7 @@ const Provider = ({children}) => {
         LogIn,
         logOut,
         signInWithGoogle,
-        
+        updateUser
 
     }
 
