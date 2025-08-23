@@ -6,7 +6,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
-  GoogleAuthProvider,signInWithPopup,sendPasswordResetEmail
+  GoogleAuthProvider,fetchSignInMethodsForEmail,
+  signInWithPopup,sendPasswordResetEmail
 } from "firebase/auth";
 
 import app from '../Firebase/firebase.config';
@@ -23,12 +24,15 @@ const signInWithGoogle = () => {
 
 const Provider = ({children}) => {
     const [user,setUser]=useState(null);
+     const [loading, setLoading] = useState(true);
 
     const createUser = (email,password)=>{
+         setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
     };
 
   const LogIn = (email,password)=>{
+     setLoading(true);
     return signInWithEmailAndPassword(auth,email,password);
   };
 
@@ -44,6 +48,7 @@ const resetPassword = (email) => {
     useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+       setLoading(true);
     });
     return () => {
       unsubscribe();
@@ -57,7 +62,7 @@ const resetPassword = (email) => {
         LogIn,
         logOut,
         signInWithGoogle,
-        updateUser,resetPassword
+        updateUser,resetPassword,loading
 
     }
 

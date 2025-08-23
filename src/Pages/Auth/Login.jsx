@@ -39,17 +39,6 @@ const Login = () => {
    const email = form.email.value;
    const password = form.password.value;
 
-   if(!user){
-     Swal.fire({
-      title: "Oops!",
-      text: "No user found! please register!.",
-      icon: "warning",
-       
-    });
-   navigate('/auth/register');
-   return;
-   }
-    
    LogIn(email,password)
   .then((result) =>{
         const user = result.user;
@@ -75,8 +64,9 @@ const Login = () => {
       icon: 'error',
       confirmButtonText: 'Try Again',
     });
-        
+      
    }
+  
          else {
           Swal.fire({
             title: 'Login Failed',
@@ -88,8 +78,8 @@ const Login = () => {
         }
     })
    
-
-  }
+    
+     }
   const getEmail=(e)=>{
       const email = e.target.value;
      console.log(email);
