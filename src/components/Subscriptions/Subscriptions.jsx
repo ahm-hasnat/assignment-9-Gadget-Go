@@ -11,11 +11,11 @@ const Subscriptions = () => {
       
   }, []);
     return (
-        <div className='mt-20 w-6xl mx-auto'>
+        <div className='mt-20 w-[85%] mx-auto'>
             <h1 className='text-4xl font-bold text-center'> Featured Subscriptions</h1>
             <p className='text-sm text-center mt-4 mb-12 text-gray-600'>Explore our top tech subscription boxes curated for enthusiasts and professionals alike.</p>
 
-      <div className=" grid grid-cols-3 gap-4 mt-6">
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-6">
         {subscriptions.map(data => (
          <SubscriptionCard data={data} key={data.id}></SubscriptionCard>
         ))}

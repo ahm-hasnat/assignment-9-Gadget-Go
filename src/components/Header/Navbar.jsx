@@ -51,7 +51,7 @@ const Navbar = () => {
         <li ><NavLink className = {activeLink} to = '/errorpage' >Contacts</NavLink></li>
       </ul>
     </div>
-    <img className='w-16' src="/src/assets/gadget-100.png" alt="" />
+    <img className='w-16 hidden sm:flex' src="https://i.ibb.co.com/VprTWst8/gadget-100.png" alt="" />
     <a className="text-[#585379] text-xl font-bold">Gadget 
         <span className='text-[#009fb7]'>Go</span></a>
   </div>
@@ -94,7 +94,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-// https://randomuser.me/api/portraits/men/2.jpg
-//  <img
-//             alt="Tailwind CSS Navbar component"
-//             src="https://randomuser.me/api/portraits/men/1.jpg" />
