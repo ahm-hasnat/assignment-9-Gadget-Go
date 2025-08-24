@@ -1,5 +1,4 @@
 import React, { use, useState } from 'react';
-import { FaEye,FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../../AuthProvider/Provider';
 import { useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
@@ -30,7 +29,7 @@ const ResetPass = () => {
             navigate('/auth/login');
         })
        .catch((error) => {
-    console.error(error.code, error.message);
+    // console.error(error.code, error.message);
     Swal.fire("Error", error.message, "error");
   });
 

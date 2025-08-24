@@ -27,7 +27,7 @@ const Login = () => {
    navigate('/');
     })
     .catch(error => {
-      console.error(error.message);
+      // console.error(error.message);
      
     });
 
@@ -42,7 +42,7 @@ const Login = () => {
    LogIn(email,password)
   .then((result) =>{
         const user = result.user;
-        console.log(user);
+        // console.log(user);
          Swal.fire({
       title: "Success!",
       text: "Logged in Successfully!.",
@@ -55,7 +55,7 @@ const Login = () => {
     )
     .catch((error)=>{
        const errorCode = error.code;
-        console.error(error.code); 
+        // console.error(error.code); 
 
         if (error.code === 'auth/invalid-credential') {
     Swal.fire({
@@ -82,7 +82,7 @@ const Login = () => {
      }
   const getEmail=(e)=>{
       const email = e.target.value;
-     console.log(email);
+    //  console.log(email);
      setEmail(email);
      
     }

@@ -26,7 +26,7 @@ const Register = () => {
        navigate('/');
         })
         .catch(error => {
-          console.error(error.message);
+          // console.error(error.message);
          
         });
     
@@ -85,7 +85,7 @@ const Register = () => {
 createUser(email,password)
     .then((result) =>{
       const user = result.user;
-      console.log(user);
+      // console.log(user);
       updateUser({
      
        displayName : name,

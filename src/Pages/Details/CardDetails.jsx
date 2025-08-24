@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData, useLocation, useNavigate, useParams } from 'react-router';
+import { useLoaderData, useLocation,  useParams } from 'react-router';
 import { FaStar } from "react-icons/fa";
 
 const CardDetails = () => {
