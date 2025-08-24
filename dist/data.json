@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Smart Home Box",
+    "thumbnail": "https://i.ibb.co.com/zVXzmjfL/home.jpg",
+    "banner": "https://i.ibb.co.com/zVXzmjfL/home.jpg",
+    "frequency": "Yearly",
+    "price": 199.99,
+    "description": "Transform your home into a smart home with curated smart devices, home automation products, and IoT gadgets.",
+    "tech_category": "Smart Home",
+    "features": [
+      "Smart Home Devices",
+      "Home Automation Tools",
+      "Cutting-edge IoT Gadgets"
+    ],
+    "subscription_benefits": [
+      "Discount on Future Smart Home Purchases",
+      "Exclusive Smart Home Tutorials",
+      "Early Access to Product Releases"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 315
+  },
+  {
+    "id": 2,
+    "name": "AI Productivity Suite",
+    "thumbnail": "https://i.ibb.co.com/NnpYQ9pb/aii.jpg",
+    "banner": "https://i.ibb.co.com/NnpYQ9pb/aii.jpg",
+    "frequency": "Monthly",
+    "price": 29.99,
+    "description": "Boost your work efficiency with AI tools for scheduling, writing, and project management.",
+    "tech_category": "Productivity",
+    "features": [
+      "AI Calendar Integration",
+      "Automated Writing Assistants",
+      "Task Optimizers"
+    ],
+    "subscription_benefits": [
+      "Real-time Updates",
+      "Cross-platform Support",
+      "Custom Workflows"
+    ],
+    "ratings": 4.6,
+    "number_of_reviews": 202
+  },
+  {
+    "id": 3,
+    "name": "VR Gaming Pack",
+    "thumbnail": "https://i.ibb.co.com/xcjmC4n/vr.jpg",
+    "banner": "https://i.ibb.co.com/xcjmC4n/vr.jpg",
+    "frequency": "Quarterly",
+    "price": 59.99,
+    "description": "Get access to exclusive VR titles and immersive game experiences delivered every quarter.",
+    "tech_category": "Gaming",
+    "features": [
+      "Top-rated VR Games",
+      "Exclusive Beta Access",
+      "VR Accessories Guide"
+    ],
+    "subscription_benefits": [
+      "Free Game Trials",
+      "Community Events",
+      "Discounted VR Gear"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 178
+  },
+  {
+    "id": 4,
+    "name": "Cybersecurity Essentials",
+    "thumbnail": "https://i.ibb.co.com/PGP4MGHg/cyber.jpg",
+    "banner": "https://i.ibb.co.com/PGP4MGHg/cyber.jpg",
+    "frequency": "Yearly",
+    "price": 149.99,
+    "description": "Stay safe online with tools and tutorials for protecting your digital life.",
+    "tech_category": "Security",
+    "features": [
+      "Password Managers",
+      "VPN Access",
+      "Anti-phishing Tools"
+    ],
+    "subscription_benefits": [
+      "Priority Tech Support",
+      "Monthly Security Reports",
+      "Family Plans Available"
+    ],
+    "ratings": 4.5,
+    "number_of_reviews": 142
+  },
+  {
+    "id": 5,
+    "name": "Developer Toolkit",
+    "thumbnail": "https://i.ibb.co.com/fYGBXKwL/compressed-original.webp",
+    "banner": "https://i.ibb.co.com/fYGBXKwL/compressed-original.webp",
+    "frequency": "Monthly",
+    "price": 19.99,
+    "description": "Enhance your development workflow with curated tools, templates, and APIs.",
+    "tech_category": "Development",
+    "features": [
+      "Code Snippets Library",
+      "API Testing Tools",
+      "UI/UX Components"
+    ],
+    "subscription_benefits": [
+      "GitHub Integration",
+      "Premium Slack Community",
+      "Early Access to New Tools"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 387
+  },
+  {
+  "id": 6,
+  "name": "Creator Gear Box",
+  "thumbnail": "https://i.ibb.co.com/jPG20pDX/content.webp",
+  "banner": "https://i.ibb.co.com/jPG20pDX/content.webp",
+  "tech_category": "Content Creation",
+  "frequency": "Monthly",
+  "price": 49.99,
+  "description": "Level up your content with hand-picked gear and digital tools for creators. Perfect for streamers, podcasters, and video makers.",
+  "features": [
+    "Lighting kits & ring lights",
+    "Microphone accessories",
+    "Editing software trials",
+    "Streaming & recording gear"
+  ],
+  "subscription_benefits": [
+    "Tutorials by top creators",
+    "Early access to creator tools",
+    "Access to private creator community"
+  ],
+  "ratings": 4.8,
+  "number_of_reviews": 274
+}
+
+]

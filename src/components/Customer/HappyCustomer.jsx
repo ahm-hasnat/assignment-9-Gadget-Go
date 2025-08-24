@@ -11,7 +11,7 @@ const Customers = [
     id: 2,
     name: 'James',
     image: 'https://i.pravatar.cc/150?img=8',
-    text: '“ Top-notch service and great value for money. Highly recommend MyBox! ”',
+    text: '“ Top-notch service and great value for money. Highly recommend GadgetGo! ”',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const HappyCustomer = () => {
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-primary">Our Happy Customers</h1>
         <p className="text- mt-2 text-sm md:text-base text-gray-600">
-          See what our subscribers have to say about their MyBox experience.
+          See what our subscribers have to say about their GadgetGo experience.
         </p>
       </div>
 
