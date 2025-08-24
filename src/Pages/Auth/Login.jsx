@@ -3,6 +3,7 @@ import {  useNavigate } from 'react-router';
 import { AuthContext } from '../../AuthProvider/Provider';
 import Swal from 'sweetalert2'
 import { FaEye,FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -92,7 +93,11 @@ const handleResetPass=e=>{
 }
     return (
         <div className="hero bg-base-200 ">
+         <Helmet>
+              <title>GadgetGo-login</title>
+            </Helmet>
   <div className="hero-content flex-col lg:flex">
+     
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold mb-5">Login now!</h1>
       

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/Provider';
 import { FaEye,FaEyeSlash } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
   
@@ -123,8 +124,14 @@ createUser(email,password)
     return (
          <div className="hero bg-[#F3F3F3]  
         flex items-center justify-center">
+        
+          <Helmet>
+          <title>GadgetGo-register now</title>
+        </Helmet>
   <div className="hero-content flex-col">
     <div className="text-center lg:text-left">
+
+      
       <h1 className="text-3xl font-bold">Register Now!</h1>
       
     </div>

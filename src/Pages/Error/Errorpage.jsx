@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { FaArrowLeft } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const Errorpage = () => {
   const navigate = useNavigate();
@@ -11,6 +12,9 @@ const Errorpage = () => {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
+      <Helmet>
+          <title>GadgetGo-error</title>
+        </Helmet>
       <div className=" text-center p-6">
       
 

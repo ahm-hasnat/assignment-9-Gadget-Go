@@ -1,5 +1,6 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter } from 'react-router'; 
+
 import Root from '../Root/Root';
 import Errorpage from '../Error/Errorpage';
 import Home from '../Home/Home';
@@ -14,50 +15,52 @@ import PrivateRoute from '../../AuthProvider/PrivateRoute';
 export const router = createBrowserRouter([
   {
     path: '/',
-   Component:Root,
-   errorElement: <Errorpage></Errorpage>,
+    element: <Root />, 
+    errorElement: <Errorpage />,
     children: [
       {
         index: true,
-        path: '/',
-        Component:Home ,
+        element: <Home />
       },
       {
-        path:'/details/:id',
-        element: <PrivateRoute>
-               <CardDetails></CardDetails>
-        </PrivateRoute> ,
-        loader:()=>fetch('/data.json')
-        
+        path: '/details/:id',
+        element: (
+          <PrivateRoute>
+            <CardDetails />
+          </PrivateRoute>
+        ),
+        loader: () => fetch('/data.json')
       },
       {
-        path : '/profile',
-        element: <PrivateRoute>
-               <Profile></Profile>
-        </PrivateRoute> ,
+        path: '/profile',
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        )
       }
     ]
-},
-{
- path : '/errorpage',
- Component:Errorpage,
-},
-{
-    path:'/auth',
-    Component: Auth,
-    children:[
-        {
-    path:'/auth/login',
-    Component : Login,
-},
-{
-    path:'/auth/register',
-   Component : Register,
-},{
-  path:'/auth/reset',
-  Component: ResetPass,
-}
+  },
+  {
+    path: '/errorpage',
+    element: <Errorpage /> 
+  },
+  {
+    path: '/auth',
+    element: <Auth />,
+    children: [
+      {
+        path: '/auth/login',
+        element: <Login />
+      },
+      {
+        path: '/auth/register',
+        element: <Register />
+      },
+      {
+        path: '/auth/reset',
+        element: <ResetPass />
+      }
     ]
-}
-
+  }
 ]);

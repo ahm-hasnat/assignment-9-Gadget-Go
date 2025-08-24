@@ -1,6 +1,8 @@
 import React, { use, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/Provider';
 import { ToastContainer,toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
+
 
 const Profile = () => {
   const { user,setUser,updateUser } = use(AuthContext);
@@ -35,6 +37,9 @@ const Profile = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-10 px-4">
+      <Helmet>
+                      <title>GadgetGo-profile</title>
+                  </Helmet>
         <ToastContainer></ToastContainer>
       <div className="card bg-white shadow-lg p-8 rounded-xl
        flex flex-col md:flex-row gap-10">

@@ -2,7 +2,7 @@ import React, { use, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/Provider';
 import { useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
-import { Navigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 
 const ResetPass = () => {
@@ -36,6 +36,9 @@ const ResetPass = () => {
     }
     return (
           <div className="hero bg-base-200 ">
+            <Helmet>
+                <title>GadgetGo-reset password</title>
+              </Helmet>
           <div className="hero-content flex-col lg:flex">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl mt-5 font-bold mb-5">Reset Password</h1>

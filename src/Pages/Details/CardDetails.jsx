@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData, useLocation,  useParams } from 'react-router';
 import { FaStar } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 const CardDetails = () => {
   const [reviewText, setReviewText] = useState('');
@@ -9,7 +10,7 @@ const CardDetails = () => {
 const {id} = useParams();
   const data = useLoaderData();
 const location = useLocation();
-  console.log(data);
+  // console.log(data);
   const parseID = parseInt(id);
   const singleCardData = data.find(cardData => cardData.id === parseID );
 
@@ -45,9 +46,12 @@ if(location.pathname == '/details/:id'){
   </div>
 }
   return (
-
+ 
     
     <div className="max-w-4xl mx-auto p-6">
+  <Helmet>
+    <title>GadgetGo-subscribe now</title>
+  </Helmet>
         <h1 className='text-4xl font-bold text-primary my-8'>Your Subscription</h1>
       <div className="mb-8 card shadow p-5 bg-white ">
          <img 
@@ -63,8 +67,7 @@ if(location.pathname == '/details/:id'){
          {
              
                  singleCardData?.features.map((data, index) => (
-                <div key={index} className="badge badge-success 
-                sm ml-4">{data}</div>
+                <div key={index} className="badge badge-success badge-xs md:badge-sm ml-4">{data}</div>
                 
             ))}
          </div>

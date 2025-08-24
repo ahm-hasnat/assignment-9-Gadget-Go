@@ -62,7 +62,7 @@ const resetPassword = (email) => {
         LogIn,
         logOut,
         signInWithGoogle,
-        updateUser,resetPassword,loading
+        updateUser,resetPassword,loading,
 
     }
 

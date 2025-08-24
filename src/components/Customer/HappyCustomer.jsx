@@ -23,7 +23,7 @@ const Customers = [
 
 const HappyCustomer = () => {
   return (
-    <section className=" py-16 px-4 md:px-12 mt-8">
+    <section className=" py-16  mt-8 w-[85%] mx-auto">
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-primary">Our Happy Customers</h1>
         <p className="text- mt-2 text-sm md:text-base text-gray-600">
